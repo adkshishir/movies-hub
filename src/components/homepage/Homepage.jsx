@@ -25,14 +25,14 @@ const Homepage = () => {
   useEffect(() => {
     const fetchALLData = async () => {
       try {
-        const [data1, data2, data3] = await Promise.all([
-          useFetch("../../../news.json"),
-          useFetch("../../../movies.json"),
-          useFetch("../../../controversy.json"),
-        ]);
+        // const [data1, data2, data3] = await Promise.all([
+        //   useFetch("../../../news.json"),
+        //   useFetch("../../../movies.json"),
+        //   useFetch("../../../controversy.json"),
+        // ]);
         setMovies(movies);
-        setControversy(data3);
-        setNews(data1);
+        setControversy(movies);
+        setNews(movies);
       } catch (error) {
         console.error(error);
       }
