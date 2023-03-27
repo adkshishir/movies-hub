@@ -8,6 +8,7 @@ import Popular from "./Popular";
 import TextbelowImag from "./TextbelowImag";
 import TodayTop from "./TodayTop";
 import useFetch from "./useFetch";
+import movies from "../../../movies.json";
 
 const Homepage = () => {
   const [movie, setMovies] = useState([]);
@@ -29,7 +30,7 @@ const Homepage = () => {
           useFetch("../../../movies.json"),
           useFetch("../../../controversy.json"),
         ]);
-        setMovies(data2);
+        setMovies(movies);
         setControversy(data3);
         setNews(data1);
       } catch (error) {
