@@ -8,10 +8,9 @@ import Popular from "./Popular";
 import TextbelowImag from "./TextbelowImag";
 import TodayTop from "./TodayTop";
 import useFetch from "./useFetch";
-import movies from "../../../movies.json";
 
 const Homepage = () => {
-  const [movie, setMovies] = useState(movies);
+  const [movie, setMovies] = useState([]);
   const [controversy, setControversy] = useState([]);
   // const [actors, setActors] = useState([]);
   const [news, setNews] = useState([]);
@@ -26,11 +25,11 @@ const Homepage = () => {
     const fetchALLData = async () => {
       try {
         const [data1, data2, data3] = await Promise.all([
-          useFetch("../../../news.json"),
-          useFetch("../../../movies.json"),
-          useFetch("../../../controversy.json"),
+          useFetch("news.json"),
+          useFetch("movies.json"),
+          useFetch("controversy.json"),
         ]);
-        // setMovies(movies);
+        setMovies(data2);
         setControversy(data3);
         setNews(data1);
       } catch (error) {
@@ -44,9 +43,9 @@ const Homepage = () => {
       {/* <div className=" text-center font-bold h-[100px] shadow-red-100 shadow-md my-2 border-2 align-middle max-w-6xl m-auto rounded-md">
         ADs
       </div> */}
-      <div className="grid lg:grid-cols-3   gap-2 max-w-[80%] mx-auto">
+      <div className="grid lg:grid-cols-3  gap-2 2xl:max-w-[80%] p-2 mx-auto ">
         {/* todays news goes here */}
-        <div className="lg:col-span-2 m-2 rounded-md  shadow-red-100   shadow-md  grid lg:grid-cols-3">
+        <div className="lg:col-span-2 m-2 rounded-md  shadow-red-100   shadow-md  grid lg:grid-cols-3 mx-auto">
           {/* from all movies 4 movies are filter to show the samples in the homepage */}
           {movie4.map((data, index) => (
             <LeftGrid
@@ -97,7 +96,7 @@ const Homepage = () => {
 
       <div className="grid lg:grid-cols-3  gap-2 max-w-[80%] mx-auto">
         <div className=" lg:col-span-3 m-2 p-3">
-          <CategoriesTop value={"what's"} name={"see now"} url={`/actors`} />
+          <CategoriesTop value={"Actors"} name={"see now"} url={`/actors`} />
         </div>
         <div className=" col-span-2 grid lg:grid-cols-3">
           {movie4.map((data, index) => (
@@ -113,6 +112,7 @@ const Homepage = () => {
         </div>
         <Popular />
         <div className=" col-span-2">
+          <CategoriesTop value={"movies or other content"} />
           {movie4.map((data, index) => (
             <Actors
               heading={data.name}

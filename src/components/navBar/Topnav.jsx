@@ -33,7 +33,7 @@ const Topnav = () => {
         <Topsingle name={date.month} />
         <Topsingle name={date.year} />
       </div>
-      <div className="flex  align-middle w">
+      <div className="lg:flex hidden  align-middle w">
         | <Topsingle name={"facebook"} />|
         <Topsingle name={"insta"} />|
         <Topsingle name={"twitter"} />|

@@ -26,6 +26,11 @@ const Body = ({ details }) => {
               <h3 className="font-semibold">
                 {details[id] && details[id].DOBA}
               </h3>
+              <ul className=" list-none w-fit bg-white p-2 rounded-lg shadow-md my-2">
+                <RightnavSingle name={"movies"} url={`actors/${id}/movies`} />
+                <hr className=" " height="3px" />
+                <RightnavSingle name={"photos"} url={`actors/${id}/photos`} />
+              </ul>
               <p className=" whitespace-pre-wrap">
                 {" "}
                 {details[id] && details[id].summary}
@@ -35,11 +40,7 @@ const Body = ({ details }) => {
           <h2 className="w-full text-center my-2">
             Movies play by {details[id] && details[id].name} till 2018
           </h2>
-          <ul className=" list-none w-fit bg-white p-2 rounded-lg shadow-md m-auto my-2">
-            <RightnavSingle name={"movies"} url={`actors/${id}/movies`} />
-            <hr className=" " height="3px" />
-            <RightnavSingle name={"photos"} url={`actors/${id}/photos`} />
-          </ul>
+
           <div>
             {movies[id].movies.map((movie) => (
               <MovieTable movie={movie} key={movie.index} />
