@@ -25,9 +25,9 @@ const Homepage = () => {
     const fetchALLData = async () => {
       try {
         const [data1, data2, data3] = await Promise.all([
-          useFetch("news.json"),
-          useFetch("movies.json"),
-          useFetch("controversy.json"),
+          useFetch("../../../news.json"),
+          useFetch("../../../movies.json"),
+          useFetch("../../../controversy.json"),
         ]);
         setMovies(data2);
         setControversy(data3);
