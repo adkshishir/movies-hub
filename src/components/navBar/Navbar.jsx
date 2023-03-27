@@ -21,8 +21,15 @@ const Navbar = () => {
         >
           toggle
         </div>
+        {
+          <div className="  border-b bg-white hidden   lg:flex w-full  justify-center  ">
+            <Leftnav />
+            <Rightnav />
+            <hr />
+          </div>
+        }
         {toggled && (
-          <div className="  border-b bg-white   lg:flex w-full  justify-center  ">
+          <div className="  border-b bg-white lg:hidden w-full  justify-center  ">
             <Leftnav />
             <Rightnav />
             <hr />
