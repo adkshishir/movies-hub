@@ -13,10 +13,17 @@
 }
 h1 {
   font-family: var(--poppins);
+
   /* font-family: var(--inconsolata);
   font-family: var(--itim);
   font-family: var(--montserrat); */
 }
+h1:hover,
+h2:hover {
+  color: rgb(255, 136, 0);
+  transition-duration: 200ms;
+}
+
 h2 {
   font-family: var(--poppins);
 }

@@ -24,7 +24,7 @@ const Topnav = () => {
   });
 
   return (
-    <nav className="flex justify-between max-w-[80%] mx-auto py-2 bg-[#151515] text-white list-none ">
+    <nav className="flex justify-between mx-auto xl:px-[10%] py-2 bg-[#151515] text-white list-none ">
       {/* even thought this is left we are calling rightsingle nav because rightsingle nav is independent to other components */}
       <div className="flex px-1 ">
         {" "}
